@@ -28,11 +28,11 @@ class ItemAdmin(admin.ModelAdmin):
         'content',
         'category_id',
         'local_basic_id',
+        'local_address',
         'rent_day_start',
         'rent_day_end',
         'cost_per_day',
-        'enroll',
-        'active',
+        'status',
     )
 
 @admin.register(models.Image)
@@ -57,4 +57,6 @@ class LikeAdmin(admin.ModelAdmin):
     list_display = (
         'item',
         'creator',
+        'want_day_start',
+        'want_day_end',
     )
