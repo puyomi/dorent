@@ -6,9 +6,9 @@ from . import models
 @admin.register(models.CategoryId)
 class CategoryIdAdmin(admin.ModelAdmin):
     list_display = (
-        'depth1',
-        'depth2',
-        'depth3',
+        'cat_depth1',
+        'cat_depth2',
+        'cat_depth3',
     )
 
 

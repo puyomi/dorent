@@ -11,9 +11,9 @@ class TimeStampedModel(models.Model):
 
 class CategoryId(models.Model):
     
-    depth1 = models.CharField(max_length=80, null=True)
-    depth2 = models.CharField(max_length=80, null=True)
-    depth3 = models.CharField(max_length=80, null=True)
+    cat_depth1 = models.CharField(max_length=80, null=True)
+    cat_depth2 = models.CharField(max_length=80, null=True)
+    cat_depth3 = models.CharField(max_length=80, null=True)
 
 class LocalBasicId(models.Model):
 
