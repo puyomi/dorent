@@ -16,6 +16,10 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path(
+        "products/",
+        include("dorent.products.urls", namespace="products"),
+    ),    
+    path(
         "users/",
         include("dorent.users.urls", namespace="users"),
     ),

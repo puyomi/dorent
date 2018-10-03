@@ -5,11 +5,19 @@ from . import models
 
 @admin.register(models.CategoryId)
 class CategoryIdAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = (
+        'depth1',
+        'depth2',
+        'depth3',
+    )
+
 
 @admin.register(models.LocalBasicId)
 class LocalBasicIdAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = (
+        'local_basic',
+        'local_wide',
+    )
 
 @admin.register(models.Item)
 class ItemAdmin(admin.ModelAdmin):
