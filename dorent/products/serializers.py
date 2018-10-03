@@ -25,7 +25,20 @@ class LocalSerializer(serializers.ModelSerializer):
 
 
 
-
+class UserItemSimpleSerializer(serializers.ModelSerializer):
+    images = ImageListSerializer(many=True)
+    category_id = CategorySerializer()
+    local_basic_id = LocalSerializer()
+    class Meta:
+        model = models.Item
+        fields = (
+            'id',
+            'images',
+            'subject',
+            'category_id',
+            'local_basic_id',
+            'cost_per_day',
+        )        
 
 
 

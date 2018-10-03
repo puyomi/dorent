@@ -38,6 +38,10 @@ class User(AbstractUser):
             return "지하수"
         else:
             return "담수"
+
+    @property
+    def rento_item_count(self):
+        return self.rento_items.count()
         
 
     def get_absolute_url(self):

@@ -4,14 +4,13 @@ from rest_framework import status
 from . import models, serializers
 
 
-class ItemFeed(APIView):
+class FeedRecommendedItem(APIView):
 
     def get(self, request, format=None):
 
-        found_items = models.Item.objects.all().order_by('-updated_at')[:30]
-        item_list = []
-
-        return Response(status=status.HTTP_200_OK)
+        item_list = models.Item.objects.all().order_by('-updated_at')[:20]
+        serializer = serializers.ItemDetailSerializer(item_list, many=True)
+        return Response(data=serializer.data ,status=status.HTTP_200_OK)
 
 
 class ItemDetail(APIView):
