@@ -9,6 +9,7 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
+
 class CategoryId(models.Model):
     
     cat_depth1 = models.CharField(max_length=80, null=True)
