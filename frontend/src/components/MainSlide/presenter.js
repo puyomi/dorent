@@ -1,5 +1,9 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import "./styles.module.scss";
 
-const NewComponent = props => <div>메인슬라이드</div>;
+const NewComponent = props => (
+  <div>
+    <img src={require("images/mainslidetest.png")} alt="mainslide" />
+  </div>
+);
 export default NewComponent;

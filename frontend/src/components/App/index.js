@@ -1,4 +1,11 @@
 import { connect } from "react-redux";
 import Container from "./container";
 
-export default connect()(Container);
+const mapStateToProps = (state, ownProps) => {
+  const { router } = state;
+  return {
+    pathname: router.location.pathname
+  };
+};
+
+export default connect(mapStateToProps)(Container);
