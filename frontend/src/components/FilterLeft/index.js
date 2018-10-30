@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 const FilterLeft = props => (
   <div className={styles.container}>
     <div className={styles.row}>
-      <span>Shop | Test Title</span>
+      <span>Shop / Test Title</span>
     </div>
     <div className={styles.row}>
       <span>title</span>
