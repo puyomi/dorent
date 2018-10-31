@@ -1,13 +1,29 @@
+@import "../../config/variables";
+
 .container {
-    height: 32px;
-    border-bottom: 1px solid #dddddd;
-    background-color: #f4ede5;
+  height: 32px;
+
+  background-color: #e8e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .inner {
     display: flex;
     justify-content: center;
-    align-items: center;
-  .alert {
+    width: 100%;
+    max-width: $max-page-width;
+    .alert {
       font-size: 11px;
       color: #494949;
-      font-weight: bold;
+      u {
+        font-weight: bold;
+      }
+    }
+    
+    .red {
+      font-size: 11px;
+      color: #10609b;
+      font-weight: 600;
+    }
   }
 }

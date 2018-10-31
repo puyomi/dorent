@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Ionicon from "react-ionicons";
 
 const Navigation = props => (
-  <div className={styles.navigation}>
+  <nav className={styles.navigation}>
     <div className={styles.inner}>
       <div className={styles.column}>
         <Link to="/all">
@@ -37,13 +37,13 @@ const Navigation = props => (
       </div>
       <div className={styles.column}>
         <Link to="/upload">
-          <span className={styles.upload}><Ionicon icon="md-camera" />물건 등록하기</span>
+          <span className={styles.upload}><Ionicon icon="md-camera" fontSize="18px"/>물건 등록하기</span>
         </Link>
-        <Link to="/upload">
-          <span className={styles.loginMenu}><Ionicon icon="md-person" />로그인메뉴</span>
+        <Link to="/loginmenu">
+          <span className={styles.loginMenu}><Ionicon icon="md-person" fontSize="18px"/>로그인</span>
         </Link>
       </div>
     </div>
-  </div>
+  </nav>
 );
 export default Navigation;

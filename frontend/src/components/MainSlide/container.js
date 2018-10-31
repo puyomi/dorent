@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import NewComponent from "./presenter";
+import MainSlide from "./presenter";
 
 class Container extends Component {
   render() {
-    return <NewComponent />;
+    return <MainSlide />;
   }
 }
 
