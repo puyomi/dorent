@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
+import Ionicon from "react-ionicons";
 
 const Navigation = props => (
   <div className={styles.navigation}>
     <div className={styles.inner}>
       <div className={styles.column}>
-        <Link to="/"><img src={require("images/logo.png")} alt="Logo이미지"/></Link>
+        <Link to="/all">
+          <span className={styles.item}>
+            <Ionicon icon="md-list-box" />
+            전체카테고리
+          </span>
+        </Link>
         <Link to="/digital">
           <span className={styles.item}>디지털/가전</span>
         </Link>
@@ -19,11 +25,24 @@ const Navigation = props => (
         <Link to="/etc">
           <span className={styles.item}>기타/잡화</span>
         </Link>
-        <Link to="/upload">
-          <span className={styles.upload}>물건등록하기</span>
+      </div>
+      <div className={styles.column}>
+        <Link to="/">
+          <img
+            className={styles.logo}
+            src={require("images/logo.png")}
+            alt="Logo이미지"
+          />
         </Link>
       </div>
-      <div className={styles.column}>로그인메뉴</div>
+      <div className={styles.column}>
+        <Link to="/upload">
+          <span className={styles.upload}><Ionicon icon="md-camera" />물건 등록하기</span>
+        </Link>
+        <Link to="/upload">
+          <span className={styles.loginMenu}><Ionicon icon="md-person" />로그인메뉴</span>
+        </Link>
+      </div>
     </div>
   </div>
 );
