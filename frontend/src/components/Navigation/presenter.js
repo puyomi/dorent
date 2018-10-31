@@ -8,7 +8,7 @@ const Navigation = props => (
     <div className={styles.inner}>
       <div className={styles.column}>
         <Link to="/all">
-          <span className={styles.item}>
+          <span className={[styles.item]}>
             <Ionicon icon="md-list-box" />
             전체카테고리
           </span>

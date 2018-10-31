@@ -1,0 +1,13 @@
+.container {
+    height: 32px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #f4ede5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  .alert {
+      font-size: 11px;
+      color: #494949;
+      font-weight: bold;
+  }
+}

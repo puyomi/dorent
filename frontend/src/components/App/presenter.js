@@ -5,11 +5,13 @@ import Navigation from "components/Navigation";
 import Footer from "components/Footer";
 import MainSlide from "components/MainSlide";
 import Digital from "components/Digital"
+import NavAlert from "components/NavAlert";
 
 const App = props => [
-  <Navigation key={1} />,
-  <MainFrame key={2} />,
-  <Footer key={3} />
+  <Navigation key={2} />,
+  <NavAlert key={3} />,
+  <MainFrame key={4} />,
+  <Footer key={5} />
 ];
 
 const MainFrame = props => (
