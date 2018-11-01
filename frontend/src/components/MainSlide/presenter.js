@@ -8,7 +8,7 @@ const MainSlide = props => (
         <input type="submit" className="inputType" value="지금 시작하기" />
       </div>
     </form>
-    <input type="submit" className="inputTypeq" value="시작하기2" />
+    
   </div>
 );
 
