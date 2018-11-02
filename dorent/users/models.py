@@ -18,6 +18,7 @@ class User(AbstractUser):
 
     profile_image = models.ImageField(null=True)
     name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    email = models.EmailField()
     exp = models.IntegerField(default=0)
     bio = models.TextField(null=True)
     phone = models.CharField(max_length=140, null=True)
