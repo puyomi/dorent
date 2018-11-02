@@ -13,8 +13,7 @@ class User(AbstractUser):
 
     GENDER_CHOICES = (
         ('male', 'Male'),
-        ('female', 'Female'),
-        ('non-specified', 'Not specified')
+        ('female', 'Female')
     )
 
     profile_image = models.ImageField(null=True)
