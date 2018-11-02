@@ -7,12 +7,10 @@ const Navigation = props => (
   <nav className={styles.navigation}>
     <div className={styles.inner}>
       <div className={styles.column}>
-        <Link to="/all">
-          <span className={[styles.item]}>
-            <Ionicon icon="md-list-box" />
-            전체카테고리
+        <span className={[styles.item]}>
+          <Ionicon icon="md-list-box" />
+          전체카테고리
           </span>
-        </Link>
         <Link to="/digital">
           <span className={styles.item}>디지털/가전</span>
         </Link>
@@ -37,10 +35,10 @@ const Navigation = props => (
       </div>
       <div className={styles.column}>
         <Link to="/upload">
-          <span className={styles.upload}><Ionicon icon="md-camera" fontSize="18px"/>물건 등록하기</span>
+          <span className={styles.upload}><Ionicon icon="md-camera" fontSize="18px" />물건 등록하기</span>
         </Link>
         <Link to="/loginmenu">
-          <span className={styles.loginMenu}><Ionicon icon="md-person" fontSize="18px"/>로그인</span>
+          <span className={styles.loginMenu}><Ionicon icon="md-person" fontSize="18px" />로그인</span>
         </Link>
       </div>
     </div>
