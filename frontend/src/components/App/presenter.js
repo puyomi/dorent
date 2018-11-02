@@ -6,6 +6,7 @@ import Footer from "components/Footer";
 import MainSlide from "components/MainSlide";
 import Digital from "components/Digital"
 import NavAlert from "components/NavAlert";
+import UploadIntro from "components/UploadIntro";
 
 const App = props => [
   <Navigation key={2} />,
@@ -21,7 +22,7 @@ const MainFrame = props => (
     <Route exact path="/clothes" render={() => "의류/패션"} />
     <Route exact path="/hobby" render={() => "생활/취미"} />
     <Route exact path="/etc" render={() => "기타/잡화"} />
-    <Route exact path="/upload" render={() => "물품등록하기"} />
+    <Route exact path="/uploadintro" component={UploadIntro} />
   </Switch>
 );
 
