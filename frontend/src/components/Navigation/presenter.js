@@ -34,10 +34,10 @@ const Navigation = props => (
         </Link>
       </div>
       <div className={styles.column}>
-        <Link to="/uploadintro">
+        <Link to="/upload">
           <span className={styles.upload}><Ionicon icon="md-camera" fontSize="18px" />물건 등록하기</span>
         </Link>
-        <Link to="/loginmenu">
+        <Link to="/auth">
           <span className={styles.loginMenu}><Ionicon icon="md-person" fontSize="18px" />로그인</span>
         </Link>
       </div>

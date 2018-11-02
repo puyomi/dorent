@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 const Footer = props => (
-  <div>
+  <div className={styles.container}>
     <span>
       회사소개 | 사업자정보확인 ㅣ 개인정보처리방침 | 이용약관
       <br />
