@@ -10,7 +10,7 @@ class ItemDetailUserSerializer(serializers.ModelSerializer):
 
 class ImageListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Image
+        model = models.AddedImage
         fields = ('__all__')
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -40,7 +40,21 @@ class UserItemSimpleSerializer(serializers.ModelSerializer):
             'cost_per_day',
         )        
 
-
+# OW
+class UploadItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Item
+        fields = (
+            'index_image',
+            'subject',
+            'content',
+            'category_id',
+            'local_basic_id',
+            'local_address',
+            'rent_day_start',
+            'rent_day_end',
+            'cost_per_day',
+        )
 
 
 
@@ -53,6 +67,7 @@ class ItemDetailSerializer(serializers.ModelSerializer):
         model = models.Item
         fields = (
             'id',
+            'index_image',
             'creator',
             'images',
             'subject',

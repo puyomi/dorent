@@ -4,6 +4,19 @@ from rest_framework import status
 from . import models, serializers
 
 
+
+class UploadProducts(APIView):
+    # Upload Item
+    def post(self, request, format=None):
+        user = request.user
+        serializer = serializers.UploadItemSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(creator=user, status="active")
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class FeedRecommendedItem(APIView):
 
     def get(self, request, format=None):

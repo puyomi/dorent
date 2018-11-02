@@ -32,6 +32,7 @@ class Item(TimeStampedModel):
     """ITEM MODEL"""
 
     creator = models.ForeignKey(user_models.User, on_delete=models.PROTECT, related_name='rento_items')
+    index_image = models.ImageField(null = True, blank=True)
     subject = models.CharField(max_length=800)
     content = models.TextField()
     category_id = models.ForeignKey(CategoryId, on_delete=models.PROTECT, related_name='cats')
@@ -58,7 +59,9 @@ class Item(TimeStampedModel):
     class Meta:
         ordering = ['-updated_at']
 
-class Image(models.Model):
+
+
+class AddedImage(models.Model):
 
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='images')
     file = models.ImageField()

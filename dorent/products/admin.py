@@ -24,6 +24,7 @@ class ItemAdmin(admin.ModelAdmin):
 
     list_display = (
         'creator',
+        'index_image',
         'subject',
         'content',
         'category_id',
@@ -35,7 +36,7 @@ class ItemAdmin(admin.ModelAdmin):
         'status',
     )
 
-@admin.register(models.Image)
+@admin.register(models.AddedImage)
 class ImageAdmin(admin.ModelAdmin):
     list_display = (
         'item',

@@ -6,4 +6,5 @@ app_name = "products"
 urlpatterns = [
     path("<int:item_id>/", view=views.ItemDetail.as_view(), name="item_detail"),
     path("feed/", view=views.FeedRecommendedItem.as_view(), name="feed_rec"),
+    path("upload/", view=views.UploadProducts.as_view(), name="upload_item"),
 ]
