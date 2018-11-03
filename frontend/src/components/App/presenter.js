@@ -27,7 +27,7 @@ const MainFrame = () => (
     <Route exact path="/upload" component={Upload} />
     <Route exact path="/auth" component={Auth} />
     <Route exact path="/profile" component={Profile} />
-    {/* <Route exact path="/boards" render={() => "게시판"} /> */}
+    <Route exact path="/boards" render={() => "게시판"} />
   </Switch>
 );
 

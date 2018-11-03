@@ -11,7 +11,7 @@ class Container extends Component {
     const { action } = this.state;
     const { isLoggedIn } = this.props;
     if (isLoggedIn) {
-      return <Redirect to="/Profile" />;
+      return <Redirect to="/profile" />;
     } else {
       return (
         <Auth

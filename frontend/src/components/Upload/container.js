@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Upload from "./presenter";
+import { UploadIntro } from "./presenter";
 
 class Container extends Component {
   state = {
@@ -7,11 +8,17 @@ class Container extends Component {
   };
   render() {
     const { action } = this.state;
-    return <Upload {...this.props} action={action} changeAction={this._changeAction} />;
+    if (action === "intro") {
+      return <UploadIntro changeAction={this._changeAction} />;
+    } else if (action === "upload1" && this.props.isLoggedIn) {
+      return <Upload />;
+    } else {
+      return <div>로그인이필요해</div>;
+    }
   }
   _changeAction = () => {
     this.setState({
-        action: "upload1"
+      action: "upload1"
     });
   };
 }
