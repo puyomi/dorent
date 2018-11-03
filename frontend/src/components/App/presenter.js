@@ -8,15 +8,16 @@ import Digital from "components/Digital";
 import NavAlert from "components/NavAlert";
 import Upload from "components/Upload";
 import Auth from "components/Auth";
+import Profile from "components/Profile"
 
-const App = props => [
+const App = () => [
   <Navigation key={2} />,
   <NavAlert key={3} />,
   <MainFrame key={4} />,
   <Footer key={5} />
 ];
 
-const MainFrame = props => (
+const MainFrame = () => (
   <Switch>
     <Route exact path="/" component={MainSlide} />
     <Route exact path="/digital" component={Digital} />
@@ -25,6 +26,8 @@ const MainFrame = props => (
     <Route exact path="/etc" render={() => "기타/잡화"} />
     <Route exact path="/upload" component={Upload} />
     <Route exact path="/auth" component={Auth} />
+    <Route exact path="/profile" component={Profile} />
+    {/* <Route exact path="/boards" render={() => "게시판"} /> */}
   </Switch>
 );
 

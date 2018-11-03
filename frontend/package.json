@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://localhost:8000/",
   "dependencies": {
     "connected-react-router": "^4.5.0",
     "node-sass": "^4.9.4",

@@ -3,7 +3,7 @@ import App from "./presenter";
 
 class Container extends Component {
   render() {
-    return <App />;
+    return <App {...this.props} />;
   }
 }
 

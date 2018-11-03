@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Auth from "./presenter";
+import { Redirect } from "react-router-dom";
 
 class Container extends Component {
   state = {
@@ -8,13 +9,19 @@ class Container extends Component {
 
   render() {
     const { action } = this.state;
-    return (
-      <Auth
-        action={action}
-        changeLogin={this._changeActionLogin}
-        changeSignup={this._changeActionSignup}
-      />
-    );
+    const { isLoggedIn } = this.props;
+    if (isLoggedIn) {
+      return <Redirect to="/Profile" />;
+    } else {
+      return (
+        <Auth
+          {...this.props}
+          action={action}
+          changeLogin={this._changeActionLogin}
+          changeSignup={this._changeActionSignup}
+        />
+      );
+    }
   }
   _changeActionLogin = () => {
     this.setState({
@@ -26,7 +33,6 @@ class Container extends Component {
       action: "signup"
     });
   };
-
 }
 
 export default Container;

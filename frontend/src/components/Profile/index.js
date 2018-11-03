@@ -2,24 +2,22 @@ import { connect } from "react-redux";
 import Container from "./container";
 import { actionCreators as userActions } from "redux/modules/user";
 
+const mapStateToProps = (state, ownProps) => {
+  const { user } = state;
+  return {
+    isLoggedIn: user.isLoggedIn
+  };
+};
+
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    createAccount: (username, password, name, email, phone, bankaccount) => {
-      dispatch(
-        userActions.createAccount(
-          username,
-          password,
-          name,
-          email,
-          phone,
-          bankaccount
-        )
-      );
+    logout: () => {
+      dispatch(userActions.logout());
     }
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Container);
