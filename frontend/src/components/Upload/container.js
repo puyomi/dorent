@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Upload from "./presenter";
 import { UploadIntro } from "./presenter";
+import {Redirect} from "react-router-dom"
 
 class Container extends Component {
   state = {
@@ -13,7 +14,7 @@ class Container extends Component {
     } else if (action === "upload1" && this.props.isLoggedIn) {
       return <Upload />;
     } else {
-      return <div>로그인이필요해</div>;
+      return <Redirect to="/auth" />
     }
   }
   _changeAction = () => {
