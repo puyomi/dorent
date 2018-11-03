@@ -4,14 +4,14 @@
   margin-top: 20px;
   width: 100%;
   display: flex;
+  justify-content: center;
   .inner {
-    max-width: 100%;
+    max-width: $max-page-width;
     display: flex;
     justify-content: center;
     width: 100%;
 
     .filter {
-      max-width: 265px;
       @include boxBorder(no);
       margin-right: 15px;
     }

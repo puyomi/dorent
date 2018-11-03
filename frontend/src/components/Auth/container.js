@@ -3,26 +3,30 @@ import Auth from "./presenter";
 
 class Container extends Component {
   state = {
-    action: "signin"
+    action: "login"
   };
+
   render() {
     const { action } = this.state;
-    return <Auth action={action} changeAction={this._changeAction} />;
+    return (
+      <Auth
+        action={action}
+        changeLogin={this._changeActionLogin}
+        changeSignup={this._changeActionSignup}
+      />
+    );
   }
-  _changeAction = () => {
-    this.setState(prevState => {
-      const { action } = prevState;
-      if (action === "signin") {
-        return {
-          action: "signup"
-        };
-      } else if (action === "signup") {
-        return {
-          action: "signin"
-        };
-      }
+  _changeActionLogin = () => {
+    this.setState({
+      action: "login"
     });
   };
+  _changeActionSignup = () => {
+    this.setState({
+      action: "signup"
+    });
+  };
+
 }
 
 export default Container;

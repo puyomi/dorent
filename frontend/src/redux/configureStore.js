@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { connectRouter, routerMiddleware } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import { composeWithDevTools } from "redux-devtools-extension";
+import user from "redux/modules/user";
 
 // import Reactotron from "ReactotronConfig";
 
@@ -18,7 +19,7 @@ if (env === "development") {
 }
 
 const reducer = combineReducers({
-
+  user
 });
 
 let store;

@@ -5,7 +5,7 @@ const Upload = props => {
   return (
     <div>
       {props.action === "intro" && <UploadIntro {...props} />}
-      {props.action === "upload1" && <UploadForm />}
+      {props.action === "upload1" && props.isLoggedIn ? <UploadForm /> : "로그인이 필요합니다."}
     </div>
   );
 };

@@ -7,7 +7,7 @@ class Container extends Component {
   };
   render() {
     const { action } = this.state;
-    return <Upload action={action} changeAction={this._changeAction} />;
+    return <Upload {...this.props} action={action} changeAction={this._changeAction} />;
   }
   _changeAction = () => {
     this.setState({
