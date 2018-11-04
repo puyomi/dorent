@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import NewComponent from "./presenter";
+import UploadItem from "./presenter";
 
 class Container extends Component {
   render() {
-    return <NewComponent />;
+    return <UploadItem {...this.props}/>;
   }
 }
 

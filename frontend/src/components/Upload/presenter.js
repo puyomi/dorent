@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import UploadItem from "components/UploadItem";
 
 const Upload = props => {
   return (
     <div className={styles.container}>
-      <div>업로드창입니당</div>
+      <UploadItem />
     </div>
   );
 };
-
 
 export const UploadIntro = props => {
   return (

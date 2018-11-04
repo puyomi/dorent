@@ -41,10 +41,11 @@ function uploadItem(
   cost_per_day
 ) {
   return (dispatch, getState) => {
-    const { user } = getState;
+    const { token } = getState.user;
     fetch("/products/upload/", {
       method: "POST",
       headers: {
+        Authorization: `JWT ${token}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
