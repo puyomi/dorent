@@ -4,6 +4,7 @@ import { connectRouter, routerMiddleware } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import { composeWithDevTools } from "redux-devtools-extension";
 import user from "redux/modules/user";
+import item from "redux/modules/item";
 
 // import Reactotron from "ReactotronConfig";
 
@@ -19,7 +20,8 @@ if (env === "development") {
 }
 
 const reducer = combineReducers({
-  user
+  user,
+  item
 });
 
 let store;
