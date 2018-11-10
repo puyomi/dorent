@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:8000",
   "dependencies": {
+    "axios": "^0.18.0",
     "node-sass": "^4.10.0",
     "promise-polyfill": "^8.1.0",
     "react": "^16.6.0",

@@ -1,5 +1,5 @@
 // imports
-
+import axios from "axios";
 // actions
 
 const SAVE_TOKEN = "SAVE_TOKEN";
@@ -7,10 +7,11 @@ const LOGOUT = "LOGOUT";
 
 // action creators
 
-function saveToken(token) {
+function saveToken(token, username) {
   return {
     type: SAVE_TOKEN,
-    token
+    token,
+    username
   };
 }
 
@@ -21,23 +22,23 @@ function logout() {
 }
 
 // API actions
-
 function usernameLogin(username, password) {
-  return function(dispatch) {
-    fetch("/rest-auth/login/", {
+  return dispatch => {
+    axios("/rest-auth/login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
+      data: JSON.stringify({
         username,
         password
       })
     })
-      .then(response => response.json())
-      .then(json => {
-        if (json.token) {
-          dispatch(saveToken(json.token));
+      .then(response => {
+        const { token } = response.data;
+        const { username } = response.data.user;
+        if (token) {
+          dispatch(saveToken(token, username));
         }
       })
       .catch(err => console.log(err));
@@ -45,13 +46,13 @@ function usernameLogin(username, password) {
 }
 
 function createAccount(username, password, name, email, phone, bankaccount) {
-  return function(dispatch) {
-    fetch("/rest-auth/registration/", {
+  return dispatch => {
+    axios("/rest-auth/registration/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
+      data: JSON.stringify({
         username,
         password1: password,
         password2: password,
@@ -61,10 +62,11 @@ function createAccount(username, password, name, email, phone, bankaccount) {
         bankaccount
       })
     })
-      .then(response => response.json())
-      .then(json => {
-        if (json.token) {
-          dispatch(saveToken(json.token));
+      .then(response => {
+        const { token } = response.data;
+        const { username } = response.data.user;
+        if (token) {
+          dispatch(saveToken(token, username));
         }
       })
       .catch(err => console.log(err));
@@ -75,7 +77,8 @@ function createAccount(username, password, name, email, phone, bankaccount) {
 
 const initialState = {
   isLoggedIn: localStorage.getItem("jwt") ? true : false,
-  token: localStorage.getItem("jwt")
+  token: localStorage.getItem("jwt"),
+  username: localStorage.getItem("username")
 };
 
 // reducer
@@ -93,18 +96,22 @@ function reducer(state = initialState, action) {
 // reducer function
 
 function applySetToken(state, action) {
-  const { token } = action;
+  const { token, username } = action;
   localStorage.setItem("jwt", token);
+  localStorage.setItem("username", username);
   return {
     ...state,
     isLoggedIn: true,
-    token
+    token,
+    username
   };
 }
 
 function applyLogout(state, action) {
   localStorage.removeItem("jwt");
+  localStorage.removeItem("username");
   return {
+    ...state,
     isLoggedIn: false
   };
 }
