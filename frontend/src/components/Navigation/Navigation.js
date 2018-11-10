@@ -9,8 +9,8 @@ const Navigation = ({ isLoggedIn }) => {
       <div className={styles.inner}>
         <div className={styles.column}>
           <Link to="/products">
-            <span className={[styles.item]}>
-              <Ionicon icon="md-list-box" />
+            <span className={styles.item}>
+            <Ionicon icon="md-list-box" />
               전체카테고리
             </span>
           </Link>

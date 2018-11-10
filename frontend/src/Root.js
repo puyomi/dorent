@@ -4,6 +4,7 @@ import store from "./store";
 import { BrowserRouter as Router } from "react-router-dom";
 import { App } from "components";
 
+
 const Root = () => {
   return (
     <Provider store={store}>
