@@ -3,6 +3,25 @@ import axios from "axios";
 
 const FEED_ITEM = "FEED_ITEM";
 
+function setFeedToState(feed) {
+  return {
+    type: FEED_ITEM,
+    feed
+  };
+}
+
+function feedItem() {
+  return dispatch => {
+    axios
+      .get("/products/feed/")
+      .then(response => {
+        const { data } = response;
+        dispatch(setFeedToState(data));
+      })
+      .catch(err => console.log(err));
+  };
+}
+
 function uploadItem(
   subject,
   content,
@@ -55,11 +74,16 @@ function reducer(state = initialState, action) {
 }
 
 function applyFeedItem(state, action) {
-  return state;
+  const { feed } = action;
+  return {
+    ...state,
+    feed
+  };
 }
 
 const actionCreators = {
-  uploadItem
+  uploadItem,
+  feedItem
 };
 
 export { actionCreators };
