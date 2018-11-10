@@ -45,7 +45,6 @@ class UploadItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Item
         fields = (
-            'index_image',
             'subject',
             'content',
             'category_id',
@@ -67,7 +66,6 @@ class ItemDetailSerializer(serializers.ModelSerializer):
         model = models.Item
         fields = (
             'id',
-            'index_image',
             'creator',
             'images',
             'subject',

@@ -3,9 +3,7 @@ import axios from "axios";
 
 const FEED_ITEM = "FEED_ITEM";
 
-const uploadItemList = {}
 function uploadItem(
-  index_image,
   subject,
   content,
   category_id,
@@ -15,14 +13,17 @@ function uploadItem(
   rent_day_end,
   cost_per_day
 ) {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const {
+      user: { token }
+    } = getState();
     axios("/products/upload/", {
       method: "POST",
       headers: {
+        Authorization: `JWT ${token}`,
         "Content-Type": "application/json"
       },
       data: JSON.stringify({
-        index_image,
         subject,
         content,
         category_id,

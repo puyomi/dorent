@@ -24,7 +24,6 @@ class ItemAdmin(admin.ModelAdmin):
 
     list_display = (
         'creator',
-        'index_image',
         'subject',
         'content',
         'category_id',
