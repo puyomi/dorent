@@ -5,5 +5,6 @@ import App from "./App/App";
 import LoginForm from "./LoginForm/LoginForm";
 import SignupForm from "./SignupForm/SignupForm";
 import AuthTemplate from "./AuthTemplate/AuthTemplate"
+import Profile from "./Profile/Profile"
 
-export { App, Navigation, Footer, NavAlert, LoginForm, SignupForm, AuthTemplate };
+export { App, Navigation, Footer, NavAlert, LoginForm, SignupForm, AuthTemplate, Profile };

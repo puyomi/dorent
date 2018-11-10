@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import {AuthContainer} from "containers";
+import {AuthContainer, ProfileContainer} from "containers";
+
 
 class BodyContainer extends Component {
 
@@ -11,6 +12,7 @@ class BodyContainer extends Component {
         <Route exact path="/products" render={() => "상품화면"} />
         <Route exact path="/upload" render={() => "업로드화면"} />
         <Route exact path="/auth" component={AuthContainer} />
+        <Route exact path="/profile" component={ProfileContainer} />
         <Route component={NotFound} />
       </Switch>
     );
