@@ -15,7 +15,6 @@ class ItemListContainer extends Component {
 
   render() {
     const { feed } = this.props;
-    console.log(feed);
     return (
       <div>
         <ul>
